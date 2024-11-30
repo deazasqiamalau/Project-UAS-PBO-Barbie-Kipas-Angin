@@ -1,0 +1,5 @@
+Kode Barang: BRG301124408
+Nama Barang: Baju
+Harga: 40000
+Stok: 1
+

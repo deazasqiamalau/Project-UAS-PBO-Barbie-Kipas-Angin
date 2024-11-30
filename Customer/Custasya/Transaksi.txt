@@ -1,0 +1,5 @@
+Kode Barang: BRG031223202
+Nama Barang: Reebok
+Jumlah: 1
+Harga: 40000
+
