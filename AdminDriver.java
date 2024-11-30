@@ -136,7 +136,7 @@ public class AdminDriver extends Driver {
                         if (i / 2000 == 0) {
                             continue;
                         }
-                        System.out.print("\rRedirecting ... " + i / 2000);
+                        System.out.print("\rMengalihkan ... " + i / 2000);
                     }
                     bersihkanConsole();
                 }
@@ -162,7 +162,7 @@ public class AdminDriver extends Driver {
 
             System.out.println("\n" + "=".repeat(30) + " Tambahkan/Buat Barang " + "=".repeat(30) + "\n");
 
-            String kodeBarang = "CMK" + currentDate.format(formatter).toString() + randomNumber;
+            String kodeBarang = "SNC" + currentDate.format(formatter).toString() + randomNumber;
 
             System.out.print("Nama Barang: ");
             String namaBarang = input.next();
@@ -200,13 +200,13 @@ public class AdminDriver extends Driver {
                 if (i / 2000 == 0) {
                     continue;
                 }
-                System.out.print("\rRedirecting ... " + i / 2000);
+                System.out.print("\rMengalihkan ... " + i / 2000);
             }
             bersihkanConsole();
         }
 
         /**
-         * Menampilkan daftar barangyang tersedia.
+         * Menampilkan daftar barang yang tersedia.
          */
         @Override
         public boolean showBarang() {
@@ -242,7 +242,7 @@ public class AdminDriver extends Driver {
             if (showBarang()) {
                 System.out.println("\n" + "=".repeat(30) + " EDIT BARANG" + "=".repeat(31) + "\n");
                 while (true) {
-                    System.out.print("Masukkan kode Barang yang ingin Anda edit: ");
+                    System.out.print("Masukkan kode barang yang ingin anda edit: ");
                     kodeBarang = input.next();
                     if (listBarang.idValidator(kodeBarang)) {
                         break;
@@ -283,7 +283,7 @@ public class AdminDriver extends Driver {
                     if (i / 2000 == 0) {
                         continue;
                     }
-                    System.out.print("\rRedirecting ... " + i / 2000);
+                    System.out.print("\rMengalihkan ... " + i / 2000);
                 }
                 bersihkanConsole();
             }
@@ -303,14 +303,14 @@ public class AdminDriver extends Driver {
                 System.out.println("\n" + "=".repeat(30) + " HAPUS BARANG" + "=".repeat(30) + "\n");
 
                 while (true) {
-                    System.out.print("Masukkan kode barang yang ingin Anda hapus: ");
+                    System.out.print("Masukkan kode barang yang ingin anda hapus: ");
                     kodeBarang = input.next();
                     if (listBarang.idValidator(kodeBarang)) {
                         while (true) {
                             try {
                                 System.out.println("1. Hapus");
                                 System.out.println("2. Batal");
-                                System.out.print("\nApakah Anda yakin ingin menghapus item ini? : ");
+                                System.out.print("\nApakah anda yakin ingin menghapus item ini? : ");
                                 validation = input.nextInt();
                             } catch (InputMismatchException e) {
                                 System.out.println("\n=> Masukkan opsi yang tersedia");
@@ -324,7 +324,7 @@ public class AdminDriver extends Driver {
                                     if (i / 2000 == 0) {
                                         continue;
                                     }
-                                    System.out.print("\rRedirecting ... " + i / 2000);
+                                    System.out.print("\rMengalihkan ... " + i / 2000);
                                 }
                                 return;
                             }
@@ -339,7 +339,7 @@ public class AdminDriver extends Driver {
                     if (i / 2000 == 0) {
                         continue;
                     }
-                    System.out.print("\rRedirecting ... " + i / 2000);
+                    System.out.print("\rMengalihkan ... " + i / 2000);
                 }
                 bersihkanConsole();
             }
@@ -370,7 +370,7 @@ public class AdminDriver extends Driver {
                 return;
             }
 
-            System.out.println("\n" + "=".repeat(30) + " INVOICES MANAGER " + "=".repeat(30) + "\n");
+            System.out.println("\n" + "=".repeat(30) + " Manajer Pembayaran " + "=".repeat(30) + "\n");
             System.out.println("");
             try (Scanner scanner = new Scanner(new File("Admin/Transaksi/Transaksi.txt"))) {
                 while (scanner.hasNextLine()) {
@@ -480,7 +480,7 @@ public class AdminDriver extends Driver {
                 if (i / 2000 == 0) {
                     continue;
                 }
-                System.out.print("\rRedirecting ... " + i / 2000);
+                System.out.print("\rMengalihkan ... " + i / 2000);
             }
             bersihkanConsole();
         }
@@ -491,7 +491,7 @@ public class AdminDriver extends Driver {
      * Mengambil awalan kode transaksi sebelum pengidentifikasi "TRS".
      */
     private static String getPrefixBeforeTRS(String code) {
-        int indexTRS = code.indexOf("TRS");
+        int indexTRS = code.indexOf("PAY");
         if (indexTRS != -1) {
             return code.substring(0, indexTRS);
         } else {
@@ -525,7 +525,7 @@ public class AdminDriver extends Driver {
                     System.out.print("\nInput : ");
                     adminInput = input.nextInt();
                 } catch (InputMismatchException e) {
-                    System.out.println("\n=> Input type must be a number!");
+                    System.out.println("\n=> Jenis masukan harus berupa angka!");
                     input.nextLine();
                 }
                 if (adminInput < 0 || adminInput > 6) {

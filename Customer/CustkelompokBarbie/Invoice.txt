@@ -1,0 +1,12 @@
+Kode Transaksi: kelompokBarbiePAY301124988 - BERHASIL
+
+Kode Barang: SNC301124939
+Nama Barang: BodyLotion
+Jumlah: 3
+Harga: 204000
+
+Bayar Menggunakan: Bank Transfer
+Jumlah Total: 204000
+Dibuat pada: 30 November 2024 23:33
+
+

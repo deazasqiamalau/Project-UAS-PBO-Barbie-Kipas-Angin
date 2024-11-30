@@ -33,7 +33,7 @@ public class Customer extends Akun {
             e.printStackTrace();
         }
         
-        String folderName = "Cus" + username;
+        String folderName = "Cust" + username;
 
         File directory = null;
         File keranjangFile = null;

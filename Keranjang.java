@@ -120,12 +120,12 @@ public class Keranjang {
         List<Barang> barangAdmin = listBarangAdmin.barang;
 
         ListBarang listBarangKeranjang = new ListBarang();
-        listBarangKeranjang.bacaDariFile("Customer/Cus" + username + "/Keranjang.txt");
+        listBarangKeranjang.bacaDariFile("Customer/Cust" + username + "/Keranjang.txt");
         List<Barang> barangKeranjang = listBarangKeranjang.barang;
 
         System.out.println("\n" + "=".repeat(30) + " Barang keranjang " + "=".repeat(30) + "\n");
 
-        try (PrintWriter writer = new PrintWriter(new FileWriter("Customer/Cus" + username + "/Keranjang.txt"))) {
+        try (PrintWriter writer = new PrintWriter(new FileWriter("Customer/Cust" + username + "/Keranjang.txt"))) {
             for (Barang b : barangKeranjang) {
                 boolean existsInAdmin = false;
                 for (int i = 0; i < barangAdmin.size(); i++) {
@@ -171,7 +171,7 @@ public class Keranjang {
         ArrayList<Barang> barangAdmin = new ArrayList<>();
         barangAdmin = admin.barang;
 
-        listBarang.bacaDariFile("Customer/Cus" + username + "/Keranjang.txt");
+        listBarang.bacaDariFile("Customer/Cust" + username + "/Keranjang.txt");
         barang = listBarang.barang;
         int jumlahLama = 0;
         int mark = 0;
@@ -187,7 +187,7 @@ public class Keranjang {
                         }
                     }
                 }
-                String fileName = "Customer/Cus" + username + "/Keranjang.txt";
+                String fileName = "Customer/Cust" + username + "/Keranjang.txt";
                 try (PrintWriter writer = new PrintWriter(new FileWriter(fileName))) {
                     for (int i = 0; i < barang.size() / 2; i++) {
                         Barang bar = barang.get(i);
@@ -218,7 +218,7 @@ public class Keranjang {
      */
     public boolean idValidator(String kodeBarang, String username) {
         listBarang = new ListBarang();
-        listBarang.bacaDariFile("Customer/Cus" + username + "/Keranjang.txt");
+        listBarang.bacaDariFile("Customer/Cust" + username + "/Keranjang.txt");
         barang = listBarang.barang;
         for (Barang b : barang) {
             if (b.getKodeBarang().equals(kodeBarang)) {
@@ -237,7 +237,7 @@ public class Keranjang {
      */
     public boolean hapusBarang(String kodeBarang, String username) {
         listBarang = new ListBarang();
-        listBarang.bacaDariFile("Customer/Cus" + username + "/Keranjang.txt");
+        listBarang.bacaDariFile("Customer/Cust" + username + "/Keranjang.txt");
         barang = listBarang.barang;
         Barang barangToDelete = null;
         for (Barang b : barang) {
@@ -248,7 +248,7 @@ public class Keranjang {
         }
         if (barangToDelete != null) {
             barang.remove(barangToDelete);
-            String fileName = "Customer/Cus" + username + "/Keranjang.txt";
+            String fileName = "Customer/Cust" + username + "/Keranjang.txt";
             try (PrintWriter writer = new PrintWriter(new FileWriter(fileName))) {
                 for (Barang b : barang) {
                     writer.println("Kode Barang: " + b.getKodeBarang());

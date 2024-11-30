@@ -22,7 +22,7 @@ Total Amount: 40000
 Created at: 30 November 2024 15:28
 
 
-Kode Transaksi: tasyaTRS301124772 - MENUNGGU
+Kode Transaksi: tasyaTRS301124772 - BERHASIL
 
 Item's Code: BRG031223202
 Item's Name: Reebok
@@ -32,5 +32,17 @@ Price: 40000
 Payment method: COD
 Total Amount: 40000
 Created at: 30 November 2024 15:30
+
+
+Kode Transaksi: kelompokBarbiePAY301124988 - BERHASIL
+
+Kode Barang: SNC301124939
+Nama Barang: BodyLotion
+Jumlah: 3
+Harga: 204000
+
+Bayar Menggunakan: Bank Transfer
+Jumlah Total: 204000
+Dibuat pada: 30 November 2024 23:33
 
 

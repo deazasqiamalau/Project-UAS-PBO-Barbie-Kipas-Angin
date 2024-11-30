@@ -1,5 +1,30 @@
-Kode Barang: BRG301124408
-Nama Barang: Baju
-Harga: 40000
-Stok: 1
+Kode Barang: SNC301124353
+Nama Barang: Sunscreen
+Harga: 80000
+Stok: 12
+
+Kode Barang: SNC301124838
+Nama Barang: Moisturizer
+Harga: 50000
+Stok: 10
+
+Kode Barang: SNC301124502
+Nama Barang: Cushion
+Harga: 120000
+Stok: 5
+
+Kode Barang: SNC301124445
+Nama Barang: Lipstik
+Harga: 30000
+Stok: 15
+
+Kode Barang: SNC301124939
+Nama Barang: BodyLotion
+Harga: 68000
+Stok: 10
+
+Kode Barang: SNC301124288
+Nama Barang: Eyeshadow
+Harga: 50000
+Stok: 5
 

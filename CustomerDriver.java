@@ -42,19 +42,19 @@ public class CustomerDriver extends Driver {
             while (true) {
                 while (true) {
                     try {
-                        System.out.print("Kuantitas: ");
+                        System.out.print("Jumlah: ");
                         jumlahBeli = input.nextInt();
                     } catch (InputMismatchException e) {
-                        System.out.println("\n=> Jenis input kuantitas tidak valid!\n");
+                        System.out.println("\n=> Jenis input jumlah tidak valid!\n");
                         input.nextLine();
                     }
                     if(jumlahBeli > 0){
                         break;
                     }else{
-                        System.out.println("\n=> Kuantitas harus lebih dari 0\n");
+                        System.out.println("\n=> Jumlah harus lebih dari 0\n");
                     }
                 }
-                if(keranjang.tambahBarang(kodeBarang, "Customer/Cus" + akun.getUsername() + "/Keranjang.txt", jumlahBeli) > 0){
+                if(keranjang.tambahBarang(kodeBarang, "Customer/Cust" + akun.getUsername() + "/Keranjang.txt", jumlahBeli) > 0){
                     System.out.println("\n=> Barang yang ada di keranjang Anda jumlahnya melebihi stok\n");
                 }
                 else{
@@ -67,7 +67,7 @@ public class CustomerDriver extends Driver {
                 if (i / 2000 == 0) {
                     continue;
                 }
-                System.out.print("\rRedirecting ... " + i / 2000);
+                System.out.print("\rMengalihkan ... " + i / 2000);
             }
             bersihkanConsole();
             
@@ -78,7 +78,7 @@ public class CustomerDriver extends Driver {
         public void checkoutBarang() {
             transaksi = new Transaksi();
 
-            Path path = Paths.get("Customer/Cus" + akun.getUsername() + "/Transaksi.txt");
+            Path path = Paths.get("Customer/Cust" + akun.getUsername() + "/Transaksi.txt");
             try {
                 byte[] fileContent = Files.readAllBytes(path);
 
@@ -103,7 +103,7 @@ public class CustomerDriver extends Driver {
         public void checkInvoice() {
             transaksi = new Transaksi();
             
-            Path path = Paths.get("Customer/Cus" + akun.getUsername() + "/Invoice.txt");
+            Path path = Paths.get("Customer/Cust" + akun.getUsername() + "/Invoice.txt");
             try {
                 byte[] fileContent = Files.readAllBytes(path);
 
@@ -123,7 +123,7 @@ public class CustomerDriver extends Driver {
             listBarang = new ListBarang();
             listBarang.bacaDariFile("Admin/Barang/ListBarang.txt");
             ArrayList<Barang> barang = listBarang.barang;
-            System.out.println("\n" + "=".repeat(30) + " ITEMS LIST " + "=".repeat(30) + "\n");
+            System.out.println("\n" + "=".repeat(30) + " DAFTAR BARANG " + "=".repeat(30) + "\n");
             if (barang.isEmpty()) {
                 System.out.println("=> barang tidak ditemukan\n");
             } else {
@@ -158,33 +158,33 @@ public class CustomerDriver extends Driver {
                 System.out.println("=> Anda tidak memiliki item di keranjang Anda.");   
             }
             else{
-                System.out.println("\n" + "=".repeat(30) + " EDIT ITEM ON CART " + "=".repeat(30) + "\n");
+                System.out.println("\n" + "=".repeat(30) + " EDIT BARANG DI KERANJANG " + "=".repeat(30) + "\n");
                 while (true) {
-                    System.out.print("Masukkan kode Item yang ingin Anda edit: ");
+                    System.out.print("Masukkan kode barang yang ingin Anda edit: ");
                     kodeBarang = input.next();
                     if (keranjang.idValidator(kodeBarang, akun.getUsername())) {
                         while (true){
                             int quantity;
                             while (true) {   
-                                System.out.print("\nNew Quantity: ");
+                                System.out.print("\nJumlah baru: ");
                                 quantity = input.nextInt();
                                 if(quantity > 0){
                                     break;
                                 }
                                 else{
-                                    System.out.println("\n=> Kualitas harus lebih dari 0");
+                                    System.out.println("\n=> Jumlah harus lebih dari 0");
                                 }
                             }
                             int count = keranjang.editBarang(kodeBarang, quantity, akun.getUsername());
                             if(count == 1){
-                                System.out.println("\n=> Kuantitas melebihi stock");
+                                System.out.println("\n=> Jumlah melebihi stock");
                             }
                             else{
                                 break;
                             }
                         }
 
-                        System.out.println("\n=> Kuantitas item berhasil diedit\n");
+                        System.out.println("\n=> Jumlah item berhasil diedit\n");
                         break;
                     }
                 }
@@ -192,7 +192,7 @@ public class CustomerDriver extends Driver {
                     if (i / 2000 == 0) {
                         continue;
                     }
-                    System.out.print("\rRedirecting ... " + i / 2000);
+                    System.out.print("\rMengalihkan ... " + i / 2000);
                 }
                 bersihkanConsole();
             }
@@ -204,27 +204,27 @@ public class CustomerDriver extends Driver {
             String kodeBarang;
             
             if(!showCart()){
-                System.out.println("=> Anda tidak memiliki item di keranjang Anda.");   
+                System.out.println("=> Anda tidak memiliki barang di keranjang Anda.");   
             }
             else{
 
-                System.out.println("\n" + "=".repeat(30) + " DELETE ITEM ON CART " + "=".repeat(30) + "\n");
+                System.out.println("\n" + "=".repeat(30) + " HAPUS BARANG DI KERANJANG " + "=".repeat(30) + "\n");
                 while (true) {
-                    System.out.print("Masukkan kode Item yang ingin Anda hapus: ");
+                    System.out.print("Masukkan kode barang yang ingin Anda hapus: ");
                     kodeBarang = input.next();
                     
                     if (keranjang.hapusBarang(kodeBarang, akun.getUsername())) {
-                        System.out.println("\n=> Item berhasil dihapus.\n");
+                        System.out.println("\n=> Barang berhasil dihapus.\n");
                         break;
                     }
-                    System.out.println("\n=> Kode item tidak ditemukan.\n");
+                    System.out.println("\n=> Kode barang tidak ditemukan.\n");
                 }
                 
                 for (int i = 0; i <= 8000; i++) {
                     if (i / 2000 == 0) {
                         continue;
                     }
-                    System.out.print("\rRedirecting ... " + i / 2000);
+                    System.out.print("\rMengalihkan ... " + i / 2000);
                 }
                 bersihkanConsole();
             }
@@ -240,16 +240,16 @@ public class CustomerDriver extends Driver {
         
         while (true) {
 
-            System.out.println("\n" + "=".repeat(30) + " CUSTOMER DASHBOARD " + "=".repeat(30) + "\n");
-            System.out.println("Choice an option");
+            System.out.println("\n" + "=".repeat(30) + " DASHBOARD PELANGGAN " + "=".repeat(30) + "\n");
+            System.out.println("Pilih Opsi");
             System.out.println("1. Lihat Barang");
             System.out.println("2. Lihat Keranjang");
             System.out.println("3. Tambah Barang ke keranjang");
             System.out.println("4. Edit Barang di keranjang");
             System.out.println("5. Hapus Barang di keranjang");
-            System.out.println("6. Request Checkout");
+            System.out.println("6. Minta Pembayaran");
             System.out.println("7. Lihat Invoice");
-            System.out.println("0. Logout");
+            System.out.println("0. Keluar");
 
             while (true) {
                 try {
@@ -264,7 +264,7 @@ public class CustomerDriver extends Driver {
                 } else if (adminInput == 1) {
                     bersihkanConsole();
                     customerImpl.showBarang();
-                    System.out.println("Choice an option");
+                    System.out.println("Pilih Opsi");
                     System.out.println("1. Lihat Barang");
                     System.out.println("2. Lihat Keranjang");
                     System.out.println("3. Tambah Barang ke keranjang");
@@ -272,7 +272,7 @@ public class CustomerDriver extends Driver {
                     System.out.println("5. Hapus Barang di keranjang");
                     System.out.println("6. Request Checkout");
                     System.out.println("7. Lihat Invoice");
-                    System.out.println("0. Logout");
+                    System.out.println("0. Keluar");
                 } else {
                     break;
                 }

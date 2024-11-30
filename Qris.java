@@ -7,7 +7,7 @@ public class Qris extends Pembayaran {
         bersihkanConsole();
 
         // Display QR code
-        System.out.println("Kindly scan this QR\n");
+        System.out.println("Silakan pindai QR ini\n");
         for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 10; j++) {
                 System.out.print("#");
@@ -21,17 +21,17 @@ public class Qris extends Pembayaran {
             if (i / 20000 == 0) {
                 continue;
             }
-            System.out.print("\rRedirecting ... " + i / 20000);
+            System.out.print("\rMengalihkan ... " + i / 20000);
         }
 
         while (true) {
             try{
                 // Input QRIS PIN
-                System.out.print("\nInput your QRIS PIN: ");
+                System.out.print("\nMasukkan PIN QRIS Anda: ");
                 input.nextInt();
                 break;
             } catch(InputMismatchException e){
-                System.out.println("\n=> PIN is not valid.");
+                System.out.println("\n=> PIN tidak valid.");
                 input.nextLine();
             }
         }
@@ -40,8 +40,8 @@ public class Qris extends Pembayaran {
 
         // Display payment information
         System.out.println("=".repeat(10) + " QRIS " + "=".repeat(10));
-        System.out.println("\nPayment Information\n");
-        System.out.println("Username on marketplace: " + username);
+        System.out.println("\nInformasi Pembayaran\n");
+        System.out.println("Nama Pengguna di Marketplace: " + username);
         System.out.println("Total: " + totalHarga);
         System.out.println("");
         System.out.println("=".repeat(26));

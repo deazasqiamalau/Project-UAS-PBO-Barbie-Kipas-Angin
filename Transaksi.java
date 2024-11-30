@@ -11,12 +11,6 @@ import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
-
-/**
- * @author Kelompok 4
- * @version 1.0
- * @since 2023-12-01
- */
 public class Transaksi {
     public ListBarang listBarangAdmin;
     public ListBarang listBarangKeranjang;
@@ -66,33 +60,23 @@ public class Transaksi {
         return metodePembayaran;
     }
 
-     /**
-     * Writes transaction details to the specified file, including items, payment method, and total amount.
-     *
-     * @param fileName          The name of the file to write transaction details.
-     * @param barangKeranjang   List of items in the shopping cart.
-     * @param username          The username of the customer.
-     * @param totalHarga        The total amount of the transaction.
-     * @param metodePembayaran  The payment method used for the transaction.
-     * @param status            The status of the transaction (e.g., WAITING).
-     */
     public void tulisInvoice(String fileName, ArrayList<Barang> barangKeranjang, String username, int totalHarga, String metodePembayaran, String status){
-        setKodeTransakasi(username + "TRS" + currentDate.format(formatter).toString() + randomNumber + " - " + status);
+        setKodeTransakasi(username + "PAY" + currentDate.format(formatter).toString() + randomNumber + " - " + status);
         LocalDateTime currentDatewithTime = LocalDateTime.now();
         DateTimeFormatter formatterTime = DateTimeFormatter.ofPattern("dd MMMM yyyy HH:mm");
         try (PrintWriter writer = new PrintWriter(new FileWriter(fileName, true))) {
             writer.println("Kode Transaksi: " + getKodeTransakasi());
             for (Barang b : barangKeranjang) {
                 writer.println();
-                writer.println("Item's Code: " + b.getKodeBarang());
-                writer.println("Item's Name: " + b.getNamaBarang());
-                writer.println("Quantity: " + b.getHarga());
-                writer.println("Price: " + b.getStok());
+                writer.println("Kode Barang: " + b.getKodeBarang());
+                writer.println("Nama Barang: " + b.getNamaBarang());
+                writer.println("Jumlah: " + b.getHarga());
+                writer.println("Harga: " + b.getStok());
                 writer.println();
             }
-            writer.println("Payment method: " + metodePembayaran);
-            writer.println("Total Amount: " + totalHarga);
-            writer.println("Created at: " + currentDatewithTime.format(formatterTime));
+            writer.println("Bayar Menggunakan: " + metodePembayaran);
+            writer.println("Jumlah Total: " + totalHarga);
+            writer.println("Dibuat pada: " + currentDatewithTime.format(formatterTime));
             writer.println();
             writer.println();
         } catch (IOException e) {
@@ -100,21 +84,16 @@ public class Transaksi {
         }
     }
 
-    /**
-     * Checks and manages transactions for a given user.
-     *
-     * @param username The username of the customer.
-     */
     public void cekTransaksi(String username){
         Invoice invoice = new Invoice();
         listBarangAdmin.bacaDariFile("Admin/Barang/ListBarang.txt");
         barangAdmin = listBarangAdmin.barang;
 
-        listBarangKeranjang.bacaDariFile("Customer/Cus" + username + "/Transaksi.txt");
+        listBarangKeranjang.bacaDariFile("Customer/Cust" + username + "/Transaksi.txt");
         barangKeranjang = listBarangKeranjang.barang;
 
         if(invoice.manageInvoice(username) > 0){
-            try (PrintWriter writer = new PrintWriter("Customer/Cus" + username + "/Transaksi.txt")) {
+            try (PrintWriter writer = new PrintWriter("Customer/Cust" + username + "/Transaksi.txt")) {
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -123,13 +102,8 @@ public class Transaksi {
 
     }
     
-    /**
-     * Initiates the checkout process for a user, including choosing payment method and generating invoices.
-     *
-     * @param username The username of the customer.
-     */
     public void buatTransaksi(String username){
-        listBarangKeranjang.bacaDariFile("Customer/Cus" + username + "/Keranjang.txt");
+        listBarangKeranjang.bacaDariFile("Customer/Cust" + username + "/Keranjang.txt");
         barangKeranjang = listBarangKeranjang.barang;
 
         listBarangAdmin = new ListBarang();
@@ -146,11 +120,11 @@ public class Transaksi {
                 if(b.getKodeBarang().equals(bar.getKodeBarang())){
                     if(bar.getStok() < b.getHarga()){
                         System.out.println(bar.getStok());
-                        System.out.println("Failed processing transaction");
-                        System.out.println("Quantity over the stock\n");
-                        System.out.println("Item's code: " + b.getKodeBarang());
-                        System.out.println("Item's name: " + b.getNamaBarang());
-                        System.out.println("Quantity: " + b.getHarga());
+                        System.out.println("Gagal memproses transaksi");
+                        System.out.println("Kuantitas melebihi stok\n");
+                        System.out.println("Kode Barang: " + b.getKodeBarang());
+                        System.out.println("Nama Barang: " + b.getNamaBarang());
+                        System.out.println("Jumlah: " + b.getHarga());
                         return;
                     }
                 }
@@ -158,11 +132,11 @@ public class Transaksi {
             setJumlahHarga(getJumlahHarga() + b.getStok());
         }
 
-        System.out.println("=".repeat(50) + " Checkout Request " + "=".repeat(50));
+        System.out.println("=".repeat(50) + " Permintaan Pembayaran " + "=".repeat(50));
         System.out.println("\n1. Bank Transfer ");
         System.out.println("2. QRIS ");
         System.out.println("3. Cash On Delivery ");
-        System.out.print("\nKindly choose your payment method: ");
+        System.out.print("\nSilakan pilih metode pembayaran anda: ");
         paymentMethod = input.nextInt();
 
         Pembayaran metodePembayaran;
@@ -182,22 +156,22 @@ public class Transaksi {
         metodePembayaran.prosesPembayaran(username, getJumlahHarga());
 
 
-        System.out.println("\n1. Request checkout");
-        System.out.println("2. Cancel");
+        System.out.println("\n1. Minta pembayaran");
+        System.out.println("2. Batalkan");
         System.out.print("\nInput: ");
         statusCheckout = input.nextInt();
         if(statusCheckout == 2){
-            System.out.println("\n=> Checkout request cancelled\n");
+            System.out.println("\n=> Permintaan pembayaran dibatalkan\n");
             for(int i = 0; i <= 8000; i++){
                 if(i/2000 == 0){
                     continue;
                 }
-                System.out.print("\rRedirecting ... " + i/2000);
+                System.out.print("\rMengalihkan ... " + i/2000);
             }
             return;
         }
 
-        try (PrintWriter writer = new PrintWriter(new FileWriter("Customer/Cus" + username + "/Transaksi.txt"))) {
+        try (PrintWriter writer = new PrintWriter(new FileWriter("Customer/Cust" + username + "/Transaksi.txt"))) {
             for (Barang b : barangKeranjang) {
                 writer.println("Kode Barang: " + b.getKodeBarang());
                 writer.println("Nama Barang: " + b.getNamaBarang());
@@ -210,16 +184,16 @@ public class Transaksi {
         }
 
         tulisInvoice("Admin/Transaksi/Transaksi.txt", barangKeranjang, username, getJumlahHarga(), platform, "MENUNGGU");
-        tulisInvoice("Customer/Cus" + username + "/Invoice.txt", barangKeranjang, username, getJumlahHarga(), platform, "MENUNGGU");
+        tulisInvoice("Customer/Cust" + username + "/Invoice.txt", barangKeranjang, username, getJumlahHarga(), platform, "MENUNGGU");
 
         barangKeranjang.clear();
-        try (PrintWriter writer = new PrintWriter(new FileWriter("Customer/Cus" + username + "/Keranjang.txt"))) {
+        try (PrintWriter writer = new PrintWriter(new FileWriter("Customer/Cust" + username + "/Keranjang.txt"))) {
             writer.print("");
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-        System.out.println("\n=> Checkout requested successfully\n");
+        System.out.println("\n=> Permintaan pembayaran berhasil\n");
         for(int i = 0; i <= 8000; i++){
                 if(i/2000 == 0){
                     continue;
@@ -228,11 +202,6 @@ public class Transaksi {
         return;
     }
 
-    /**
-     * Reads transaction details from the specified file and populates the unique transaction codes.
-     *
-     * @param namaFile The name of the file to read transaction details.
-     */
     public void bacaDariFile(String namaFile) {
         try (Scanner scanner = new Scanner(new File(namaFile))) {
             while (scanner.hasNextLine()) {
@@ -251,40 +220,20 @@ public class Transaksi {
         }
     }
 
-    /**
-     * Skips a specified number of lines while reading from a file.
-     *
-     * @param scanner     The Scanner object for reading from the file.
-     * @param jumlahBaris The number of lines to skip.
-     */
     private void lewatiBaris(Scanner scanner, int jumlahBaris) {
         for (int i = 0; i < jumlahBaris && scanner.hasNextLine(); i++) {
             scanner.nextLine();
         }
     }
 
-     /**
-     * Gets the list of unique transaction codes.
-     *
-     * @return The list of unique transaction codes.
-     */
     public List<String> getDaftarKodeTransaksiUnik() {
         return daftarKodeTransaksiUnik;
     }
 
-    /**
-     * Validates a transaction code by checking if it exists in the list of unique transaction codes.
-     *
-     * @param kodeTransaksi The transaction code to validate.
-     * @return {@code true} if the transaction code is valid, {@code false} otherwise.
-     */
     public boolean KodeValidator(String kodeTransaksi) {
         return daftarKodeTransaksiUnik.contains(kodeTransaksi);
     }
 
-    /**
-     * Clears the console screen.
-     */
     public static void bersihkanConsole() {
         try {
             Process process = new ProcessBuilder("cmd", "/c", "cls", "clear").inheritIO().start();

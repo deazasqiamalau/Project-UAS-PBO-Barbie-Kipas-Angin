@@ -22,13 +22,13 @@ public class Invoice {
      * Menampilkan data faktur untuk pelanggan tertentu.
      */
     public void tampilData(String username) {
-        String invoiceFilePath = "Customer/Cus" + username + "/Invoice.txt";
+        String invoiceFilePath = "Customer/Cust" + username + "/Invoice.txt";
 
         try (Scanner scanner = new Scanner(new File(invoiceFilePath))) {
             System.out.println("\n" + "=".repeat(30) + " INVOICES " + "=".repeat(30) + "\n");
             while (scanner.hasNextLine()) {
                 String line = scanner.nextLine();
-                if (line.contains("Created at")) {
+                if (line.contains("Dibuat pada")) {
                     System.out.println(line + "\n");
                     System.out.println("-".repeat(50));
                 } else {
@@ -50,7 +50,7 @@ public class Invoice {
         List<String> daftarKodeTransaksi = transaksi.getDaftarKodeTransaksiUnik();
 
         Transaksi invoice = new Transaksi();
-        invoice.bacaDariFile("Customer/Cus" + username + "/Invoice.txt");
+        invoice.bacaDariFile("Customer/Cust" + username + "/Invoice.txt");
         List<String> daftarKodeInvoice = invoice.getDaftarKodeTransaksiUnik();
 
         for (String kodeTransaksi : daftarKodeTransaksi) {
@@ -79,10 +79,10 @@ public class Invoice {
      * Updates the content of the invoice file with the new transaction code.
      */
     private void updateInvoiceFile(String username, String oldKode, String newKode) {
-        String invoiceFilePath = "Customer/Cus" + username + "/Invoice.txt";
+        String invoiceFilePath = "Customer/Cust" + username + "/Invoice.txt";
 
         try (Scanner scanner = new Scanner(new File(invoiceFilePath));
-             PrintWriter writer = new PrintWriter("Customer/Cus" + username + "/Invoice_temp.txt")) {
+             PrintWriter writer = new PrintWriter("Customer/Cust" + username + "/Invoice_temp.txt")) {
 
             while (scanner.hasNextLine()) {
                 String baris = scanner.nextLine();
@@ -100,7 +100,7 @@ public class Invoice {
 
         // Rename the temporary file to the original file
         File fileLama = new File(invoiceFilePath);
-        File fileBaru = new File("Customer/Cus" + username + "/Invoice_temp.txt");
+        File fileBaru = new File("Customer/Cust" + username + "/Invoice_temp.txt");
         fileLama.delete();
         fileBaru.renameTo(fileLama);
     }

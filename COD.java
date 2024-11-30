@@ -12,7 +12,7 @@ public class COD extends Pembayaran {
             if (i / 20000 == 0) {
                 continue;
             }
-            System.out.print("\rRedirecting ... " + i / 20000);
+            System.out.print("\rMengalihkan ... " + i / 20000);
         }
         bersihkanConsole();
 
