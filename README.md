@@ -11,6 +11,7 @@ Deskripsi Sistem Program:
 Sistem ini dirancang untuk memfasilitasi pengguna dalam melakukan transaksi belanja online. Fitur utama dari sistem ini adalah proses login yang mengharuskan pengguna untuk memasukkan akun mereka terlebih dahulu. 
 
 Login Pengguna:
+
 Proses Login: 
 
 Pengguna yang ingin mengakses platform harus terlebih dahulu melakukan login. Sistem akan meminta pengguna untuk memasukkan username dan password yang sesuai dengan jenis akun yang dimiliki (Akun Admin atau Akun Pelanggan).
