@@ -45,7 +45,13 @@ Terdapat dua jenis akun yang tersedia: Akun Pelanggan dan Akun Admin.
 3) Struktur Sistem
    1. Admin/Transaksi/Transaksi.txt, menyimpan data transaki yang dikelola oleh admin.
    2. Customer/Cust<username>/Invoice.txt, menyimpan faktur setiap pelanggan berdasarkan username.
-   3. Alur kerja sistem
+   3. Admin/Barang/ListBarang.txt, menyimpan daftar produk yang tersedia dalam sistem belanja online.
+      Informasi yang disimpan yaitu:
+      - Kode barang:Identifikasi unik untuk setiap barang.
+      - Nama Barang: Nama produk untuk ditampilkan kepada pelanggan.
+      - Harga Barang: Harga produk
+      - Stok Barang: Jumlah barang yang tersedia untuk dibeli.
+   5. Alur kerja sistem
       - pelanggan masuk dengan akun mereka untuk melihat barang dan menambahkannya ke keranjang.
       - setelah checkout, admin memproses transaksi dan memperbarui status di sistem.
       - sistem secara otomatis memperbarui file faktur berdasarkan transaksi yang berhasil.
