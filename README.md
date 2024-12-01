@@ -8,7 +8,7 @@ Anggota Tim:
 7. Khairun Nisa (2308107010074)
 
 Deskripsi Sistem Program:
-Sistem ini dirancang untuk memfasilitasi pengguna dalam melakukan transaksi belanja online. Fitur utama dari sistem ini adalah proses login yang mengharuskan pengguna untuk memasukkan akun mereka terlebih dahulu. 
+Sistem Belanja Online with Java adalah aplikasi berbasis java yang dirancang untuk menyediakan platform belanja online. Sistem ini dirancang untuk mendukung dua jenis pengguna, yaitu admin dan pelanggan, dengan fitur-fitur yang disesuaikan untuk masing-masing jenis pengguna. 
 
 Login Pengguna:
 
@@ -41,4 +41,12 @@ Terdapat dua jenis akun yang tersedia: Akun Pelanggan dan Akun Admin.
    - Minta Pembayaran: Setelah selesai memilih produk, pelanggan dapat mengajukan permintaan pembayaran untuk melanjutkan ke proses checkout.
    - Lihat Invoice: Pelanggan dapat melihat invoice atau rincian transaksi setelah pembayaran dilakukan dan transaksi diproses.
    - Keluar: Pelanggan dapat keluar dari akun mereka jika sudah selesai menggunakan aplikasi.
+  
+3) Struktur Sistem
+   1. Admin/Transaksi/Transaksi.txt, menyimpan data transaki yang dikelola oleh admin.
+   2. Customer/Cust<username>/Invoice.txt, menyimpan faktur setiap pelanggan berdasarkan username.
+   3. Alur kerja sistem
+      - pelanggan masuk dengan akun mereka untuk melihat barang dan menambahkannya ke keranjang.
+      - setelah checkout, admin memproses transaksi dan memperbarui status di sistem.
+      - sistem secara otomatis memperbarui file faktur berdasarkan transaksi yang berhasil.
 
