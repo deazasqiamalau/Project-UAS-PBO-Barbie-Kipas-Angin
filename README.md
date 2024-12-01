@@ -13,7 +13,7 @@ Anggota Tim:
 Sistem Belanja Online with Java adalah aplikasi berbasis java yang dirancang untuk menyediakan platform belanja online. Sistem ini mendukung dua tipe pengguna utama: Admin dan Pelanggan, dengan fitur yang disesuaikan untuk masing-masing. Tujuan dari sistem ini adalah memberikan pengalaman belanja yang mudah, aman, dan terorganisasi, sekaligus mempermudah pengelolaan data produk serta transaksi oleh admin.
 
 **FITUR-FITUR UTAMA SISTEM:**
-1. Proses Login Pengguna:
+**1. Proses Login Pengguna (Admin/Pelanggan):**
    Login menjadi pintu masuk utama untuk memastikan setiap pengguna dapat mengakses fitur sesuai hak aksesnya.
    - Validasi Kredensial:
      Setiap pengguna harus memasukkan username dan password yang terdaftar. Sistem memvalidasi data ini untuk menentukan apakah pengguna adalah Admin atau Pelanggan.
@@ -26,14 +26,7 @@ Sistem Belanja Online with Java adalah aplikasi berbasis java yang dirancang unt
      Sistem menggunakan metode autentikasi untuk melindungi data pengguna dari akses yang tidak sah.
 
 
-Pengguna yang ingin mengakses platform harus terlebih dahulu melakukan login. Sistem akan meminta pengguna untuk memasukkan username dan password yang sesuai dengan jenis akun yang dimiliki (Akun Admin atau Akun Pelanggan).
-
-Proses Validasi Akun: Setelah pengguna menginput kredensial, sistem akan memverifikasi kebenaran informasi yang diberikan. Jika kredensial valid, pengguna akan diarahkan ke dashboard sesuai dengan jenis akun:
-- Akun Admin akan diarahkan ke dashboard admin.
-- Akun Pelanggan akan diarahkan ke dashboard pelanggan.
-
-Terdapat dua jenis akun yang tersedia: Akun Pelanggan dan Akun Admin.
-1) Fungsi Akun Admin:
+**2. Fitur Akun Admin:**
    Akun Admin memiliki akses penuh untuk mengelola seluruh sistem, termasuk pengelolaan pengguna dan produk. Berikut adalah beberapa tindakan yang dapat dilakukan oleh Admin melalui dashboard sistem:
    - Hapus Pengguna: Admin dapat menghapus akun pengguna yang terdaftar dalam sistem, memastikan hanya pengguna yang valid yang dapat mengakses platform.
    - Lihat Barang: Admin dapat melihat daftar barang yang terdaftar dalam sistem, memeriksa ketersediaan dan informasi setiap produk.
@@ -43,7 +36,7 @@ Terdapat dua jenis akun yang tersedia: Akun Pelanggan dan Akun Admin.
    - Kelola Transaksi: Admin dapat melihat dan memproses transaksi yang dibuat oleh pengguna, memastikan setiap pembayaran diterima dan diproses dengan benar.
    - Keluar: Admin dapat keluar dari sistem untuk mengakhiri sesi.
 
-2) Fungsi Akun Pelanggan:
+**3. Fitur Akun Pelanggan:**
    Akun Pelanggan memungkinkan pengguna untuk menjelajahi produk, mengelola keranjang belanja, dan melakukan transaksi pembelian. Melalui dashboard pelanggan, berikut adalah beberapa opsi yang tersedia:
    - Lihat Barang: Pelanggan dapat melihat daftar produk yang tersedia di platform, mengeksplorasi berbagai pilihan yang ada.
    - Lihat Keranjang: Pelanggan dapat memeriksa barang-barang yang sudah ditambahkan ke keranjang belanja mereka.
@@ -54,7 +47,7 @@ Terdapat dua jenis akun yang tersedia: Akun Pelanggan dan Akun Admin.
    - Lihat Invoice: Pelanggan dapat melihat invoice atau rincian transaksi setelah pembayaran dilakukan dan transaksi diproses.
    - Keluar: Pelanggan dapat keluar dari akun mereka jika sudah selesai menggunakan aplikasi.
   
-3) Struktur Sistem
+**4. Struktur Data Sistem:**
    1. Admin/Transaksi/Transaksi.txt, menyimpan data transaki yang dikelola oleh admin.
    2. Customer/Cust<username>/Invoice.txt, menyimpan faktur setiap pelanggan berdasarkan username.
    3. Admin/Barang/ListBarang.txt, menyimpan daftar produk yang tersedia dalam sistem belanja online.
