@@ -50,7 +50,7 @@ Sistem Belanja Online with Java adalah aplikasi berbasis java yang dirancang unt
   
 **4. Struktur Data Sistem:**
 Penyimpanan data dilakukan menggunakan file teks dengan struktur berikut:
-   1. Admin/Transaksi/Transaksi.txt, menyimpan data transaki yang dikelola oleh admin.
+   1. Admin/Transaksi/Transaksi.txt, menyimpan data transaksi yang dikelola oleh admin.
    2. Customer/Cust<username>/Invoice.txt, menyimpan faktur setiap pelanggan berdasarkan username.
    3. Admin/Barang/ListBarang.txt, menyimpan daftar produk yang tersedia dalam sistem belanja online.
       Informasi yang disimpan yaitu:
