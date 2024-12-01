@@ -55,7 +55,7 @@ Terdapat dua jenis akun yang tersedia: Akun Pelanggan dan Akun Admin.
       - Username: Identifikasi unik untuk setiap pelanggan.
       - Password: Kata sandi untuk keamanan akun pelanggan.
    6. Alur kerja sistem
-      - pelanggan masuk dengan akun mereka untuk melihat barang dan menambahkannya ke keranjang.
-      - setelah checkout, admin memproses transaksi dan memperbarui status di sistem.
-      - sistem secara otomatis memperbarui file faktur berdasarkan transaksi yang berhasil.
+      - pelanggan masuk ke akun mereka untuk melihat barang yang tersedia dan menambahkannya ke keranjang belanja.
+      - setelah melakukan checkout, admin akan memproses transaksi dan memperbarui statusnya dalam sistem.
+      - sistem secara otomatis akan memperbarui dan menghasilkan faktur sesuai dengan transaksi yang berhasil.
 
