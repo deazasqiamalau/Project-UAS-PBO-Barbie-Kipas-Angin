@@ -32,7 +32,7 @@ Terdapat dua jenis akun yang tersedia: Akun Pelanggan dan Akun Admin.
    - Keluar: Admin dapat keluar dari sistem untuk mengakhiri sesi.
 
 2) Fungsi Akun Pelanggan:
-   Akun Pelanggan memungkinkan pengguna untuk menjelajahi produk, mengelola keranjang belanja, dan melakukan transaksi pembelian. Berikut adalah beberapa opsi yang dapat diakses oleh Pelanggan melalui dashboard:
+   Akun Pelanggan memungkinkan pengguna untuk menjelajahi produk, mengelola keranjang belanja, dan melakukan transaksi pembelian. Melalui dashboard pelanggan, berikut adalah beberapa opsi yang tersedia:
    - Lihat Barang: Pelanggan dapat melihat daftar produk yang tersedia di platform, mengeksplorasi berbagai pilihan yang ada.
    - Lihat Keranjang: Pelanggan dapat memeriksa barang-barang yang sudah ditambahkan ke keranjang belanja mereka.
    - Tambah Barang ke Keranjang: Pelanggan dapat memilih produk dan menambahkannya ke dalam keranjang untuk pembelian di masa mendatang.
