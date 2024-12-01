@@ -1,4 +1,6 @@
-Sistem Belanja Online with Java By Kelompok Barbie Kipas Angin
+**SISTEM BELANJA ONLINE WITH JAVA**
+
+disusun oleh "Kelompok Barbie Kipas Angin"
 Anggota Tim:
 1. Shafa Disya Aulia (2308107010002)
 2. Dea Zasqia Pasaribu Malau (2308107010004)
@@ -7,12 +9,22 @@ Anggota Tim:
 6. Bunga Rasikhah Haya (2308107010010)
 7. Khairun Nisa (2308107010074)
 
-Deskripsi Sistem Program:
-Sistem Belanja Online with Java adalah aplikasi berbasis java yang dirancang untuk menyediakan platform belanja online. Sistem ini dirancang untuk mendukung dua jenis pengguna, yaitu admin dan pelanggan, dengan fitur-fitur yang disesuaikan untuk masing-masing jenis pengguna. 
+**PENDAHULUAN:**
+Sistem Belanja Online with Java adalah aplikasi berbasis java yang dirancang untuk menyediakan platform belanja online. Sistem ini mendukung dua tipe pengguna utama: Admin dan Pelanggan, dengan fitur yang disesuaikan untuk masing-masing. Tujuan dari sistem ini adalah memberikan pengalaman belanja yang mudah, aman, dan terorganisasi, sekaligus mempermudah pengelolaan data produk serta transaksi oleh admin.
 
-Login Pengguna:
+**FITUR-FITUR UTAMA SISTEM:**
+1. Proses Login Pengguna:
+   Login menjadi pintu masuk utama untuk memastikan setiap pengguna dapat mengakses fitur sesuai hak aksesnya.
+   - Validasi Kredensial:
+     Setiap pengguna harus memasukkan username dan password yang terdaftar. Sistem memvalidasi data ini untuk menentukan apakah pengguna adalah Admin atau Pelanggan.
+   - Dashboard Berdasarkan Jenis Akun:
+      - Jika login berhasil, pengguna akan diarahkan ke:
+        - Dashboard Admin untuk pengelolaan barang dan transaksi.
+        - Dashboard Pelanggan untuk menjelajah produk dan melakukan pembelian.
+      - Jika login gagal, sistem akan memberikan peringatan dan meminta pengguna untuk mencoba kembali.
+   - Keamanan Login:
+     Sistem menggunakan metode autentikasi untuk melindungi data pengguna dari akses yang tidak sah.
 
-Proses Login: 
 
 Pengguna yang ingin mengakses platform harus terlebih dahulu melakukan login. Sistem akan meminta pengguna untuk memasukkan username dan password yang sesuai dengan jenis akun yang dimiliki (Akun Admin atau Akun Pelanggan).
 
