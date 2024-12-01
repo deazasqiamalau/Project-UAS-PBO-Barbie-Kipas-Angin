@@ -53,9 +53,9 @@ Terdapat dua jenis akun yang tersedia: Akun Pelanggan dan Akun Admin.
       - Stok Barang: Jumlah barang yang tersedia untuk dibeli.
    4. Customer/Credentials/AkunCustomer.txt, menyimpan informasi akun pelanggan. File ini menyimpan data pelanggan seperti :
       - Username: Identifikasi unik untuk setiap pelanggan.
-      - Password: Kata sandi untuk keamanan akun pelanggan.
+      - Password: Kata sandi yang digunakan untuk keamanan akun pelanggan.
    6. Alur kerja sistem
-      - pelanggan masuk ke akun mereka untuk melihat barang yang tersedia dan menambahkannya ke keranjang belanja.
+      - pelanggan masuk ke akun mereka untuk melihat produk yang tersedia dan menambahkannya ke keranjang belanja.
       - setelah melakukan checkout, admin akan memproses transaksi dan memperbarui statusnya dalam sistem.
       - sistem secara otomatis akan memperbarui dan menghasilkan faktur sesuai dengan transaksi yang berhasil.
 
