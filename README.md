@@ -16,7 +16,7 @@ Proses Login:
 
 Pengguna yang ingin mengakses platform harus terlebih dahulu melakukan login. Sistem akan meminta pengguna untuk memasukkan username dan password yang sesuai dengan jenis akun yang dimiliki (Akun Admin atau Akun Pelanggan).
 
-Validasi Akun: Setelah pengguna memasukkan kredensial, sistem akan memvalidasi apakah akun yang dimasukkan benar. Jika akun valid, pengguna akan diarahkan ke dashboard sesuai jenis akun mereka.
+Proses Validasi Akun: Setelah pengguna menginput kredensial, sistem akan memverifikasi kebenaran informasi yang diberikan. Jika kredensial valid, pengguna akan diarahkan ke dashboard sesuai dengan jenis akun:
 - Akun Admin akan diarahkan ke dashboard admin.
 - Akun Pelanggan akan diarahkan ke dashboard pelanggan.
 
