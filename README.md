@@ -8,7 +8,18 @@ Anggota Tim:
 7. Khairun Nisa (2308107010074)
 
 Deskripsi Sistem Program:
-Sistem ini dirancang untuk memfasilitasi pengguna dalam melakukan transaksi belanja online. Fitur utama dari sistem ini adalah proses login yang mengharuskan pengguna untuk memasukkan akun mereka terlebih dahulu. Terdapat dua jenis akun yang tersedia: Akun Pelanggan dan Akun Admin.
+Sistem ini dirancang untuk memfasilitasi pengguna dalam melakukan transaksi belanja online. Fitur utama dari sistem ini adalah proses login yang mengharuskan pengguna untuk memasukkan akun mereka terlebih dahulu. 
+
+Login Pengguna:
+Proses Login: 
+
+Pengguna yang ingin mengakses platform harus terlebih dahulu melakukan login. Sistem akan meminta pengguna untuk memasukkan username dan password yang sesuai dengan jenis akun yang dimiliki (Akun Admin atau Akun Pelanggan).
+
+Validasi Akun: Setelah pengguna memasukkan kredensial, sistem akan memvalidasi apakah akun yang dimasukkan benar. Jika akun valid, pengguna akan diarahkan ke dashboard sesuai jenis akun mereka.
+- Akun Admin akan diarahkan ke dashboard admin.
+- Akun Pelanggan akan diarahkan ke dashboard pelanggan.
+
+Terdapat dua jenis akun yang tersedia: Akun Pelanggan dan Akun Admin.
 1) Fungsi Akun Admin:
    Akun Admin memiliki akses penuh untuk mengelola seluruh sistem, termasuk pengelolaan pengguna dan produk. Berikut adalah beberapa tindakan yang dapat dilakukan oleh Admin melalui dashboard sistem:
    - Hapus Pengguna: Admin dapat menghapus akun pengguna yang terdaftar dalam sistem, memastikan hanya pengguna yang valid yang dapat mengakses platform.
