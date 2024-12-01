@@ -13,6 +13,7 @@ Anggota Tim:
 Sistem Belanja Online with Java adalah aplikasi berbasis java yang dirancang untuk menyediakan platform belanja online. Sistem ini mendukung dua tipe pengguna utama: Admin dan Pelanggan, dengan fitur yang disesuaikan untuk masing-masing. Tujuan dari sistem ini adalah memberikan pengalaman belanja yang mudah, aman, dan terorganisasi, sekaligus mempermudah pengelolaan data produk serta transaksi oleh admin.
 
 **FITUR-FITUR UTAMA SISTEM:**
+
 **1. Proses Login Pengguna (Admin/Pelanggan):**
    Login menjadi pintu masuk utama untuk memastikan setiap pengguna dapat mengakses fitur sesuai hak aksesnya.
    - Validasi Kredensial:
@@ -48,6 +49,7 @@ Sistem Belanja Online with Java adalah aplikasi berbasis java yang dirancang unt
    - Keluar: Pelanggan dapat keluar dari akun mereka jika sudah selesai menggunakan aplikasi.
   
 **4. Struktur Data Sistem:**
+Penyimpanan data dilakukan menggunakan file teks dengan struktur berikut:
    1. Admin/Transaksi/Transaksi.txt, menyimpan data transaki yang dikelola oleh admin.
    2. Customer/Cust<username>/Invoice.txt, menyimpan faktur setiap pelanggan berdasarkan username.
    3. Admin/Barang/ListBarang.txt, menyimpan daftar produk yang tersedia dalam sistem belanja online.
@@ -59,7 +61,8 @@ Sistem Belanja Online with Java adalah aplikasi berbasis java yang dirancang unt
    4. Customer/Credentials/AkunCustomer.txt, menyimpan informasi akun pelanggan. File ini menyimpan data pelanggan seperti :
       - Username: Identifikasi unik untuk setiap pelanggan.
       - Password: Kata sandi yang digunakan untuk keamanan akun pelanggan.
-   6. Alur kerja sistem
+
+**5. Alur kerja sistem:**
       - pelanggan masuk ke akun mereka untuk melihat produk yang tersedia dan menambahkannya ke keranjang belanja.
       - setelah melakukan checkout, admin akan memproses transaksi dan memperbarui statusnya dalam sistem.
       - sistem secara otomatis akan memperbarui dan menghasilkan faktur sesuai dengan transaksi yang berhasil.
