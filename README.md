@@ -65,5 +65,5 @@ Penyimpanan data dilakukan menggunakan file teks dengan struktur berikut:
 **5. Alur kerja sistem:**
       - Pelanggan masuk ke akun mereka untuk melihat produk yang tersedia dan menambahkannya ke keranjang belanja.
       - Setelah melakukan checkout, admin akan memproses transaksi dan memperbarui statusnya dalam sistem.
-      - sistem secara otomatis akan memperbarui dan menghasilkan faktur sesuai dengan transaksi yang berhasil.
+      - Sistem secara otomatis akan memperbarui dan menghasilkan faktur sesuai dengan transaksi yang berhasil.
 
