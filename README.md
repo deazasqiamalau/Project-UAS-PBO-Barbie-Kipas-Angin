@@ -1,13 +1,13 @@
 **SISTEM BELANJA ONLINE WITH JAVA**
 
-disusun oleh "Kelompok Barbie Kipas Angin"
+Disusun oleh "Kelompok Barbie Kipas Angin"
 Anggota Tim:
 1. Shafa Disya Aulia (2308107010002)
 2. Dea Zasqia Pasaribu Malau (2308107010004)
-4. Tasya Zahrani (2308107010006)
-5. Anisa Ramadhani (2308107010008)
-6. Bunga Rasikhah Haya (2308107010010)
-7. Khairun Nisa (2308107010074)
+3. Tasya Zahrani (2308107010006)
+4. Anisa Ramadhani (2308107010008)
+5. Bunga Rasikhah Haya (2308107010010)
+6. Khairun Nisa (2308107010074)
 
 **PENDAHULUAN:**
 Sistem Belanja Online with Java adalah aplikasi berbasis java yang dirancang untuk menyediakan platform belanja online. Sistem ini mendukung dua tipe pengguna utama: Admin dan Pelanggan, dengan fitur yang disesuaikan untuk masing-masing. Tujuan dari sistem ini adalah memberikan pengalaman belanja yang mudah, aman, dan terorganisasi, sekaligus mempermudah pengelolaan data produk serta transaksi oleh admin.
@@ -54,7 +54,7 @@ Penyimpanan data dilakukan menggunakan file teks dengan struktur berikut:
    2. Customer/Cust<username>/Invoice.txt, menyimpan faktur setiap pelanggan berdasarkan username.
    3. Admin/Barang/ListBarang.txt, menyimpan daftar produk yang tersedia dalam sistem belanja online.
       Informasi yang disimpan yaitu:
-      - Kode barang: Identifikasi unik untuk setiap barang.
+      - Kode Barang: Identifikasi unik untuk setiap barang.
       - Nama Barang: Nama produk untuk ditampilkan kepada pelanggan.
       - Harga Barang: Harga produk
       - Stok Barang: Jumlah barang yang tersedia untuk dibeli.
@@ -62,7 +62,7 @@ Penyimpanan data dilakukan menggunakan file teks dengan struktur berikut:
       - Username: Identifikasi unik untuk setiap pelanggan.
       - Password: Kata sandi yang digunakan untuk keamanan akun pelanggan.
 
-**5. Alur kerja sistem:**
+**5. Alur Kerja Sistem:**
       - Pelanggan masuk ke akun mereka untuk melihat produk yang tersedia dan menambahkannya ke keranjang belanja.
       - Setelah melakukan checkout, admin akan memproses transaksi dan memperbarui statusnya dalam sistem.
       - Sistem secara otomatis akan memperbarui dan menghasilkan faktur sesuai dengan transaksi yang berhasil.
