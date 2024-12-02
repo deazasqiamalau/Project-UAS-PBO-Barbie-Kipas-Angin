@@ -63,7 +63,7 @@ Penyimpanan data dilakukan menggunakan file teks dengan struktur berikut:
       - Password: Kata sandi yang digunakan untuk keamanan akun pelanggan.
 
 **5. Alur kerja sistem:**
-      - pelanggan masuk ke akun mereka untuk melihat produk yang tersedia dan menambahkannya ke keranjang belanja.
+      - Pelanggan masuk ke akun mereka untuk melihat produk yang tersedia dan menambahkannya ke keranjang belanja.
       - setelah melakukan checkout, admin akan memproses transaksi dan memperbarui statusnya dalam sistem.
       - sistem secara otomatis akan memperbarui dan menghasilkan faktur sesuai dengan transaksi yang berhasil.
 
